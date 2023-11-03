@@ -20,11 +20,6 @@ services:
         # This is so we can force non-interactive mode setting up WP
         CI: ${CI:-''}
 
-    ports:
-      - '24690:24690'
-      - '24691:24691'
-      - '24692:24692'
-
   database:
     type: mysql
 
@@ -37,6 +32,11 @@ services:
 
     run:
       - yarn
+
+    ports:
+      - 24690
+      - 24691
+      - 24692
 
 tooling:
   install:
@@ -51,6 +51,12 @@ tooling:
     service: appserver
     cmd: 'tail -f /app/wp/wp-content/debug.log'
     description: 'Get real-time WP debug log output'
+
+  dev:
+    service: node
+    cmd: 'yarn dev'
+    user: root
+    description: 'Start vite dev server'
 
   webpack:
     service: node
