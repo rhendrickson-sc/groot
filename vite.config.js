@@ -4,13 +4,11 @@ import * as fs from "fs"
 export default defineConfig({
     server: {
         hmr: {
-            host: '0.0.0.0',
+            host: 'localhost',
+            protocol: "ws"
         },
-        host: 'groot.lndo.site',
-        https: {
-            cert: fs.readFileSync('/certs/cert.crt'),
-            key: fs.readFileSync('/certs/cert.key'),
-        },
+        host: true,
+        https: "false",
         port: 24690,
     },
 
