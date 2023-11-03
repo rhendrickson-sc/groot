@@ -20,6 +20,11 @@ services:
         # This is so we can force non-interactive mode setting up WP
         CI: ${CI:-''}
 
+    ports:
+        - '24690:24690'
+        - '24691:24691'
+        - '24692:24692'
+
   database:
     type: mysql
 
