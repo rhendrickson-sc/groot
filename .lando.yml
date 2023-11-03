@@ -33,11 +33,6 @@ services:
     run:
       - yarn
 
-    ports:
-      - 24690
-      - 24691
-      - 24692
-
 tooling:
   install:
     service: appserver
@@ -52,11 +47,10 @@ tooling:
     cmd: 'tail -f /app/wp/wp-content/debug.log'
     description: 'Get real-time WP debug log output'
 
-  dev:
+  vite:
     service: node
-    cmd: 'yarn dev'
-    user: root
-    description: 'Start vite dev server'
+    cmd: 'yarn build'
+    description: 'Compile resources with Vite'
 
   webpack:
     service: node
