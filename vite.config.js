@@ -1,17 +1,19 @@
 import {defineConfig} from 'vite'
-import * as fs from "fs"
+import {resolve} from 'path'
+
+const vite = require('vite');
+const AssetsVersionPlugin = require('./js/webpack-plugins/assets-version-plugin.js')
+const DeleteAfterBuildPlugin = require('./js/webpack-plugins/delete-after-build-plugin.js')
+const getThemePath = require('./js/webpack-plugins/get-theme-path.js');
 
 export default defineConfig({
-    server: {
-        hmr: {
-            host: 'localhost',
-            protocol: "ws"
-        },
-        host: true,
-        https: "false",
-        port: 24690,
+    build: {
+        lib: {
+            entry: resolve(__dirname, './js/src/common.js'),
+            name: 'CommonJS',
+            fileName: 'vite-common'
+        }
     },
-
     plugins: [
 
     ],
