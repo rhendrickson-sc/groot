@@ -73,7 +73,7 @@ $site->configure(function() {
         //Enqueue our own project-specific JavaScript, including dependencies.
         $this->enqueue_script(
             'project-common',
-            'vite-common.mjs',
+            'common.js',
             ['jquery'],
             ['file' => 'scripts.version']
         );
