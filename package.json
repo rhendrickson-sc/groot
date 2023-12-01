@@ -31,5 +31,10 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite serve"
+  },
+  "scripts": {
+    "dev": "webpack --mode=development",
+    "dev:watch": "webpack --mode=development --watch",
+    "build": "webpack --mode=production"
   }
 }
