@@ -78,7 +78,7 @@ $site->configure(function() {
         );
         $this->enqueue_script(
             'project-common',
-            'vite-common.mjs',
+            'common.js',
             ['jquery', 'magnific-popup'],
             ['file' => 'scripts.version']
         );
