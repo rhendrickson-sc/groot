@@ -30,7 +30,7 @@ export default defineConfig({
             name: 'LibraryName',
             fileName: '[name]',
         },
-        // assetsDir: '../',
+        assetsDir: '../',
         cssMinify: true,
         cssCodeSplit: true,
         // manifest: true,
