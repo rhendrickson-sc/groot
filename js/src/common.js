@@ -1,13 +1,15 @@
 /* globals jQuery */
+// import jQuery from 'jquery'
 import 'fitvids.1.1.0'
-import 'magnific-popup'
+// TODO: To work around the issues w/ magnific and vite, we load magnific from a cdn in the functions.php file
+// import 'magnific-popup'
 
 import './slideshows.js'
 import responsiveNav from './responsive-nav.jquery.js'
 import accordion from './jquery.accordion.js'
 
 (($) => {
-
+	console.log($().jquery, window.jQuery);
     $.fn.responsiveNav = responsiveNav
     $.fn.accordion = accordion
 

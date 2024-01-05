@@ -71,10 +71,15 @@ $site->configure(function() {
 
     add_action('wp_enqueue_scripts', function() {
         //Enqueue our own project-specific JavaScript, including dependencies.
+        wp_enqueue_script(
+            'magnific-popup',
+            'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js',
+            ['jquery']
+        );
         $this->enqueue_script(
             'project-common',
             'vite-common.mjs',
-            ['jquery'],
+            ['jquery', 'magnific-popup'],
             ['file' => 'scripts.version']
         );
         

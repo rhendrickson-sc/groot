@@ -8,6 +8,18 @@ const getThemePath = require('./js/webpack-plugins/get-theme-path.js');
 
 export default defineConfig({
     build: {
+        rollupOptions: {
+            external: [
+                // 'jquery',
+                // 'magnific-popup'
+            ],
+            output: {
+                // expose jQuery as a global variable
+                globals: {
+                    jquery: 'jQuery'
+                }
+            }
+        },
         lib: {
             entry: resolve(__dirname, './js/src/common.js'),
             name: 'CommonJS',
